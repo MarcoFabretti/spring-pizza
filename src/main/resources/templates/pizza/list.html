@@ -2,40 +2,34 @@
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<div th:replace="fragments/resources :: headTags"></div>
-		<title>Books</title>
+		<title>Pizza</title>
 	</head>
 	<body>
 		<nav th:replace="fragments/navbar :: navbar('books')"></nav>
 		<div class="container">
-			<h1>Books</h1>
+			<h1>Pizza</h1>
 			<hr/>
 			<div class="mb-3">
-				<a class="btn btn-primary" th:href="@{/books/create}">Add Book</a>
+				<a class="btn btn-primary" th:href="@{/books/create}">Add Pizza</a>
 			</div>
 			<table class="table" th:if="${list.size() > 0}">
 				<thead>
 					<tr>
-						<th>ISBN</th>
-						<th>Title</th>
-						<th>Authors</th>
-						<th>Publisher</th>
-						<th>Year</th>
-						<th>Copies</th>
+						<th>Nome</th>
+						<th>Descrizione</th>
+						<th>Prezzo</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr th:each="item : ${list}">
-						<td th:text="${item.isbn}"></td>
-						<td th:text="${item.title}"></td>
-						<td th:text="${item.authors}"></td>
-						<td th:text="${item.publisher}"></td>
-						<td th:text="${item.year}"></td>
-						<td th:text="${item.numberOfCopies}"></td>
+						<td th:text="${item.nome}"></td>
+						<td th:text="${item.descrizione}"></td>
+						<td th:text="${item.Prezzo}"></td>
 					</tr>
 				</tbody>
 			</table>
 			<div class="alert alert-primary" role="alert" th:unless="${list.size() > 0}">
-			  There are no books in the database
+			  Non ci sono pizze nel menù 
 			</div>
 		</div>
 		<div th:replace="fragments/resources :: scripts"></div>

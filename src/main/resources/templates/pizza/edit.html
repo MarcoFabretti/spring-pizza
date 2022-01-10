@@ -2,50 +2,31 @@
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<div th:replace="fragments/resources :: headTags"></div>
-		<title>Edit Book</title>
+		<title>Edit Pizza</title>
 	</head>
 	<body>
-		<nav th:replace="fragments/navbar :: navbar('books')"></nav>
+		<nav th:replace="fragments/navbar :: navbar('pizza')"></nav>
 		<div class="container">
-			<h1>Book</h1>
+			<h1>Pizza</h1>
 			<hr/>
 			<form 
 				id="book-form" 
-				th:object="${book}"
-				th:action="@{/books/create}"
+				th:object="${pizza}"
+				th:action="@{/pizza/create}"
 				method="post"
 			>
 			<div class="row gy-2">
 				<div class="col-12">
-					<label class="form-label" for="title">Title</label>
-					<input type="text" class="form-control" id="title" th:field="*{title}">
+					<label class="form-label" for="nome">Title</label>
+					<input type="text" class="form-control" id="title" th:field="*{nome}">
 				</div>
 				<div class="col-12">
-					<label class="form-label" for="authors">Authors</label>
-					<input type="text" class="form-control" id="authors" th:field="*{authors}">
+					<label class="form-label" for="authors">Descrizione</label>
+					<input type="text" class="form-control" id="Descrizione" th:field="*{authors}">
 				</div>
 				<div class="col-12">
-					<label class="form-label" for="publisher">Publisher</label>
-					<input type="text" class="form-control" id="publisher" th:field="*{publisher}">
-				</div>
-				<div class="col-3">
-					<label class="form-label" for="year">Year</label>
-					<input type="number" class="form-control" id="year" th:field="*{year}">
-				</div>
-				<div class="col-3">
-					<label class="form-label" for="copies">Copies</label>
-					<input type="number" class="form-control" id="copies" th:field="*{numberOfCopies}">
-				</div>
-				<div class="col-6">
-					<label class="form-label" for="isbn">ISBN</label>
-					<input type="text" class="form-control" id="isbn" th:field="*{isbn}">
-				</div>
-				<div class="col-12">
-					<label class="form-label" for="synopsis">Synopsis</label>
-					<textarea class="form-control" id="synopsis" th:field="*{synopsis}" rows="6"></textarea>
-				</div>
-				<div class="col-12">
-					<button class="btn btn-primary" type="submit">Save</button>
+					<label class="form-label" for="publisher">Prezza</label>
+					<input type="text" class="form-control" id="Prezzo" th:field="*{publisher}">
 				</div>
 			</div>	
 			</form>

@@ -11,7 +11,6 @@ public class PizzaController {
 	
 	@GetMapping("/")
 	public String pizza(Model model) {
-		return "/pizza/menu";
+		return "/pizza/list";
 	}	
-	
 }

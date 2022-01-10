@@ -57,6 +57,4 @@ public class Pizza {
 	public void setPrezzo(Double prezzo) {
 		this.prezzo = prezzo;
 	}
-	
-	
 }
