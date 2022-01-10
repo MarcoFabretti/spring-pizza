@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<div th:replace="fragments/resources :: headTags"></div>
+		<title>Edit Book</title>
+	</head>
+	<body>
+		<nav th:replace="fragments/navbar :: navbar('books')"></nav>
+		<div class="container">
+			<h1>Book</h1>
+			<hr/>
+			<form 
+				id="book-form" 
+				th:object="${book}"
+				th:action="@{/books/create}"
+				method="post"
+			>
+			<div class="row gy-2">
+				<div class="col-12">
+					<label class="form-label" for="title">Title</label>
+					<input type="text" class="form-control" id="title" th:field="*{title}">
+				</div>
+				<div class="col-12">
+					<label class="form-label" for="authors">Authors</label>
+					<input type="text" class="form-control" id="authors" th:field="*{authors}">
+				</div>
+				<div class="col-12">
+					<label class="form-label" for="publisher">Publisher</label>
+					<input type="text" class="form-control" id="publisher" th:field="*{publisher}">
+				</div>
+				<div class="col-3">
+					<label class="form-label" for="year">Year</label>
+					<input type="number" class="form-control" id="year" th:field="*{year}">
+				</div>
+				<div class="col-3">
+					<label class="form-label" for="copies">Copies</label>
+					<input type="number" class="form-control" id="copies" th:field="*{numberOfCopies}">
+				</div>
+				<div class="col-6">
+					<label class="form-label" for="isbn">ISBN</label>
+					<input type="text" class="form-control" id="isbn" th:field="*{isbn}">
+				</div>
+				<div class="col-12">
+					<label class="form-label" for="synopsis">Synopsis</label>
+					<textarea class="form-control" id="synopsis" th:field="*{synopsis}" rows="6"></textarea>
+				</div>
+				<div class="col-12">
+					<button class="btn btn-primary" type="submit">Save</button>
+				</div>
+			</div>	
+			</form>
+		</div>
+		<div th:replace="fragments/resources :: scripts"></div>
+	</body>
+</html>
