@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <div th:replace="fragments/resources :: headTags"></div>
+    <title>Form pizza</title>
+</head>
+
+<body>
+    <div class="container"></div>
+    <h1>Crea una nuova pizza</h1>
+    <hr>
+    <form id="pizza-form" th:object="${pizza}"
+        th:action="${edit} ? @{/pizza/edit/{id}(id${pizza.id})} : @{/pizza/create}" method="post">
+        <ul>
+            <li th:each="err : ${#fields.allErrors()}" th:text="${err}" class="text-danger"></li>
+        </ul>
+        <div class="row">
+            <div class="col-8">
+                <div class="row gy-2">
+                    <div class="col-12">
+                        <label class="form-label" for="nome">Nome</label>
+                        <input type="text" class="form-control" id="nome" th:field="*{nome}" th:errorClass="is-invalid">
+                        <div th:if="${#fields.hasErrors('nome')}" class="invalid-feedback"></div>
+                        <ul>
+                            <li th:each="err : ${#fields.errors('title')}" th:text="${err}"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <label class="form-label" for="Descrizione">Descrizione</label>
+                    <input type="text" class="form-control" id="Descrizione" th:field="*{Descrizione}"
+                        th:errorClass="is-invalid">
+                    <div th:if="${#fields.hasErrors('Descrizione')}" class="invalid-feedback">
+                        <ul>
+                            <li th:each="err : ${#fields.errors('authors')}" th:text="${err}"></li>
+                        </ul>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label" for="Prezzo">Prezzo</label>
+                        <input type="text" class="form-control" id="Prezzo" th:field="*{Prezzo}"
+                            th:errorClass="is-invalid">
+                        <div th:if="${#fields.hasErrors('Prezzo')}" class="invalid-feedback">
+                            <ul>
+                                <li th:each="err : ${#fields.errors('Prezzo')}" th:text="${err}"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+</body>
+
+</html>

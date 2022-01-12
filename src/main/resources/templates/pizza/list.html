@@ -5,14 +5,13 @@
 		<title>Pizza</title>
 	</head>
 	<body>
-		<nav th:replace="fragments/navbar :: navbar('books')"></nav>
 		<div class="container">
 			<h1>Pizza</h1>
-			<hr/>
+			<hr>
 			<div class="mb-3">
-				<a class="btn btn-primary" th:href="@{/books/create}">Add Pizza</a>
+				<a class="btn btn-primary" th:href="@{/pizza/create}">Add Pizza</a>
 			</div>
-			<table class="table" th:if="${list.size() > 0}">
+			<table class="table">
 				<thead>
 					<tr>
 						<th>Nome</th>
@@ -24,13 +23,10 @@
 					<tr th:each="item : ${list}">
 						<td th:text="${item.nome}"></td>
 						<td th:text="${item.descrizione}"></td>
-						<td th:text="${item.Prezzo}"></td>
+						<td th:text="${item.prezzo}"></td>
 					</tr>
 				</tbody>
 			</table>
-			<div class="alert alert-primary" role="alert" th:unless="${list.size() > 0}">
-			  Non ci sono pizze nel menù 
-			</div>
 		</div>
 		<div th:replace="fragments/resources :: scripts"></div>
 	</body>

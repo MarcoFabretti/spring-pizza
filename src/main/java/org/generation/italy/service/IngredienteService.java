@@ -1,20 +1,19 @@
 package org.generation.italy.service;
 
 import java.util.List;
-import org.generation.italy.model.Pizza;
-import org.generation.italy.repository.PizzaRepository;
+
+import org.generation.italy.model.Ingrediente;
+import org.generation.italy.repository.IngredienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PizzaService {
-	
+public class IngredienteService {
+
 	@Autowired
-	private PizzaRepository repository;
+	private IngredienteRepository repository;
 	
-	public List<Pizza> findAll(){
+	public List<Ingrediente> findAll(){
 		return repository.findAll();
-	}	
-	
-	
+	}
 }

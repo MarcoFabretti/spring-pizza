@@ -23,7 +23,7 @@ public class Pizza {
 
 	
 	@ManyToMany 
-	private List<Ingredienti> ingredienti;
+	private List<Ingrediente> ingredienti;
 	
 	
 	public Integer getId() {

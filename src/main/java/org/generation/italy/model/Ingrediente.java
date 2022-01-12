@@ -7,10 +7,10 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
 @Entity
-public class Ingredienti {
+public class Ingrediente {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY) //id netifica che la chiave primaria Ã¨ autoincrementale
+	@GeneratedValue(strategy=GenerationType.IDENTITY) //id netifica che la chiave primaria e' autoincrementale
 	private Integer id;
 	
 	@NotNull

@@ -4,7 +4,7 @@
 	<!-- main navbar -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light" th:fragment="navbar(current)">
 	  <div class="container-fluid">
-	    <a class="navbar-brand" th:href="@{/}">Spring Library</a>
+	    <a class="navbar-brand" th:href="@{/}">Spring Pizza</a>
 	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	      <span class="navbar-toggler-icon"></span>
 	    </button>
@@ -17,7 +17,7 @@
 	          <a class="nav-link" th:classAppend="${current == 'descrizione'} ? active : not-active" aria-current="page" th:href="@{/descrizione}">Descrizione</a>
 	        </li>
 	        <li class="nav-item">
-	          <a class="nav-link" th:classAppend="${current == 'prezzo'} ? active : not-active" aria-current="page" href="@{/prezzo}">Prezzo/a>
+	          <a class="nav-link" th:classAppend="${current == 'prezzo'} ? active : not-active" aria-current="page" href="@{/prezzo}">Prezzo</a>
 	        </li>
 	      </ul>
 	    </div>
